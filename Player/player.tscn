@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dx78rf0de53n4"]
+[gd_scene load_steps=51 format=3 uid="uid://dx78rf0de53n4"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://ytjar6cjfrdp" path="res://Player/sprites/idle.png" id="1_khsvf"]
@@ -484,6 +484,8 @@ _data = {
 "walk_up": SubResource("Animation_txg2d")
 }
 
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1v8la"]
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(450, 300)
 script = ExtResource("1_6qh2d")
@@ -502,3 +504,5 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1v8la")
+anim_player = NodePath("../AnimationPlayer")
