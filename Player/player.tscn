@@ -388,7 +388,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_xlqcf"]
 resource_name = "walk_down"
-length = 0.6
+length = 0.61
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -409,15 +409,15 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.58),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [8, 9, 9, 11, 12, 13, 14]
+"values": [8, 9, 10, 11, 12, 13, 14]
 }
 
 [sub_resource type="Animation" id="Animation_2cy3c"]
 resource_name = "walk_side"
-length = 0.6
+length = 0.61
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -438,7 +438,7 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.58),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -446,7 +446,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_txg2d"]
 resource_name = "walk_up"
-length = 0.6
+length = 0.61
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -485,7 +485,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(443, 265)
+position = Vector2(450, 300)
 script = ExtResource("1_6qh2d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -500,3 +500,5 @@ animation = &"Idle"
 libraries = {
 "": SubResource("AnimationLibrary_yc5we")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
