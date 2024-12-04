@@ -8,14 +8,18 @@ var current_state : EnemyState
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_DISABLED
-	pass # Replace with function body.
+	pass 
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
-	
+	change_state( current_state.process( delta ) )
 	pass
 
+
+func _physics_process(delta):
+	change_state( current_state.physics( delta ) )
+	pass
 
 
 func initialize( _enemy : enemy ) -> void:
