@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b63fmbfunx0rc"]
+[gd_scene load_steps=3 format=3 uid="uid://b63fmbfunx0rc"]
 
 [ext_resource type="PackedScene" uid="uid://dx78rf0de53n4" path="res://Player/player.tscn" id="1_7yash"]
+[ext_resource type="PackedScene" uid="uid://j4xbaayli7km" path="res://enemies/enemy.tscn" id="2_vt6al"]
 
 [node name="Playground" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_7yash")]
+
+[node name="Skeleton" parent="." instance=ExtResource("2_vt6al")]
+position = Vector2(389, 250)
