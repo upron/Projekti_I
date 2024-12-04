@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crllfptkdptyt"
-path="res://.godot/imported/Skeleton-sheet.png-6b37b5815ad300464eaba7deb111c08c.ctex"
+uid="uid://p7csi2c2admn"
+path="res://.godot/imported/Skeleton Hit.png-23d35a7de15d8893dc8f199bc33d8eed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/Skeleton/Sprite Sheets/Skeleton-sheet.png"
-dest_files=["res://.godot/imported/Skeleton-sheet.png-6b37b5815ad300464eaba7deb111c08c.ctex"]
+source_file="res://enemy/Skeleton/Sprite/Skeleton Hit.png"
+dest_files=["res://.godot/imported/Skeleton Hit.png-23d35a7de15d8893dc8f199bc33d8eed.ctex"]
 
 [params]
 
