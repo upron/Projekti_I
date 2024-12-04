@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://j4xbaayli7km"]
 
 [ext_resource type="Script" path="res://enemies/Scripts/enemy.gd" id="1_o6gf0"]
-[ext_resource type="Texture2D" uid="uid://dqdscy7wd6wha" path="res://enemies/Skeleton/Sprite Sheets/Skeleton-sheet.png" id="2_17r7h"]
+[ext_resource type="Texture2D" uid="uid://crllfptkdptyt" path="res://enemies/Skeleton/Sprite Sheets/Skeleton-sheet.png" id="2_17r7h"]
 [ext_resource type="Script" path="res://enemies/Scripts/enemy_state_machine.gd" id="3_el2pw"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_idle.gd" id="4_wqvbo"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_wander.gd" id="5_jwjuv"]
