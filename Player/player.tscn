@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dx78rf0de53n4"]
+[gd_scene load_steps=23 format=3 uid="uid://dx78rf0de53n4"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://dejn7jpg18wlt" path="res://Player/sprites/AllP.png" id="2_6wf5x"]
@@ -9,10 +9,12 @@
 [ext_resource type="AudioStream" uid="uid://b8gxgs62hy6eg" path="res://Player/Audio/miekka.mp3" id="7_bi4xi"]
 [ext_resource type="PackedScene" uid="uid://dfpr3654pjjnx" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_6w8g3"]
 [ext_resource type="Script" path="res://Player/scripts/PlayerInteractionsHost.gd" id="8_pysmk"]
-[ext_resource type="Texture2D" uid="uid://28ev5gcb8bw3" path="res://Player/sprites/key1.png" id="10_jxpb2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vg5n"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5i0c"]
+radius = 11.0
 
 [sub_resource type="Animation" id="Animation_l4rkw"]
 length = 0.001
@@ -27,6 +29,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 12)]
 }
 
 [sub_resource type="Animation" id="Animation_xk32i"]
@@ -44,6 +58,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [48, 52]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 5)]
+}
 
 [sub_resource type="Animation" id="Animation_etw2v"]
 resource_name = "attack_side"
@@ -60,6 +86,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [42, 47]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_asrmb"]
 resource_name = "attack_up"
@@ -75,6 +113,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [53, 58]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -6)]
 }
 
 [sub_resource type="Animation" id="Animation_22e16"]
@@ -193,9 +243,6 @@ _data = {
 "walk_up": SubResource("Animation_xxtn5")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y5i0c"]
-radius = 11.0
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(450, 300)
 motion_mode = 1
@@ -212,6 +259,17 @@ scale = Vector2(1.1235, 1)
 texture = ExtResource("2_6wf5x")
 hframes = 5
 vframes = 12
+
+[node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("8_6w8g3")]
+unique_name_in_owner = true
+position = Vector2(0, 12)
+scale = Vector2(0.890076, 1)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
+shape = SubResource("CircleShape2D_y5i0c")
+debug_color = Color(0.861925, 0.0510911, 0.313263, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -241,18 +299,3 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("8_pysmk")
-
-[node name="HurtBox" parent="Interactions" instance=ExtResource("8_6w8g3")]
-position = Vector2(0, 12)
-collision_mask = 256
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox"]
-shape = SubResource("CircleShape2D_y5i0c")
-debug_color = Color(0.861925, 0.0510911, 0.313263, 0.42)
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-102, -33)
-texture = ExtResource("10_jxpb2")
-hframes = 3
-frame = 1

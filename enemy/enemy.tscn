@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://j4xbaayli7km"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_g5bkf"]
-[ext_resource type="Texture2D" uid="uid://6kgwlsxltsit" path="res://enemy/Skeleton/Sprite Sheets/Skeleton Attack.png" id="2_rarp8"]
+[ext_resource type="Texture2D" uid="uid://dqdscy7wd6wha" path="res://enemy/Skeleton/Sprite Sheets/Skeleton-sheet.png" id="2_17r7h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tapls"]
 radius = 8.0
@@ -75,8 +75,9 @@ position = Vector2(-11, 5)
 shape = SubResource("CapsuleShape2D_tapls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_rarp8")
-hframes = 18
+texture = ExtResource("2_17r7h")
+hframes = 22
+vframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

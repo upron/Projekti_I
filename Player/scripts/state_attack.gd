@@ -11,7 +11,7 @@ var attacking : bool = false
 
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
-@onready var hurt_box: HurtBox = $"../../Interactions/HurtBox"
+@onready var hurt_box: HurtBox = %AttackHurtBox
 
 
 
@@ -26,7 +26,8 @@ func  Enter() -> void:
 	attacking = true
 	
 	await get_tree().create_timer(0.075).timeout
-	hurt_box.monitoring = true
+	if attacking:
+		hurt_box.monitoring = true
 	pass
 	
 func Exit() -> void:
