@@ -1,4 +1,4 @@
-class_name enemy extends CharacterBody2D
+class_name Enemy extends CharacterBody2D
 
 signal direction_changed( new_direction : Vector2 )
 signal enemy_damaged()
@@ -27,7 +27,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta):
 	pass
 
 

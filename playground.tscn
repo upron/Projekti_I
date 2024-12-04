@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://x1ppgfapeowq"]
+[gd_scene load_steps=4 format=3 uid="uid://x1ppgfapeowq"]
 
 [ext_resource type="PackedScene" uid="uid://dx78rf0de53n4" path="res://Player/player.tscn" id="1_q3gx3"]
 [ext_resource type="PackedScene" uid="uid://crg6xktas2rrw" path="res://Tile Maps/cave-01.tscn" id="2_byvk2"]
+[ext_resource type="PackedScene" uid="uid://j4xbaayli7km" path="res://enemies/enemy.tscn" id="3_lvmgo"]
 
 [node name="playground" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_q3gx3")]
+position = Vector2(39, 69)
 
 [node name="Cave-01" parent="." instance=ExtResource("2_byvk2")]
+
+[node name="Skeleton" parent="." instance=ExtResource("3_lvmgo")]

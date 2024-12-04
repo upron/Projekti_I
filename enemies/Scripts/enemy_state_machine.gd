@@ -22,7 +22,7 @@ func _physics_process(delta):
 	pass
 
 
-func initialize( _enemy : enemy ) -> void:
+func initialize( _enemy : Enemy ) -> void:
 	states = []
 	
 	for c in get_children():
@@ -37,6 +37,7 @@ func initialize( _enemy : enemy ) -> void:
 	if states.size() > 0:
 		change_state( states[0] )
 		process_mode = Node.PROCESS_MODE_INHERIT
+	pass
 
 
 
