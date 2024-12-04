@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bymrvtvdmuqq0"
-path="res://.godot/imported/Skeleton React.png-ad576e50856cb7e2b604bda81cbcaaa2.ctex"
+uid="uid://b2rdlelkhludt"
+path="res://.godot/imported/Skeleton Idle.png-c998adba04ede386bdae9fbd3b149cac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/Skeleton/Sprite Sheets/Skeleton React.png"
-dest_files=["res://.godot/imported/Skeleton React.png-ad576e50856cb7e2b604bda81cbcaaa2.ctex"]
+source_file="res://enemy/Skeleton/Sprite/Skeleton Idle.png"
+dest_files=["res://.godot/imported/Skeleton Idle.png-c998adba04ede386bdae9fbd3b149cac.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6kgwlsxltsit"
-path="res://.godot/imported/Skeleton Attack.png-5cb077f05f4516a5925611114de17297.ctex"
+uid="uid://d174sejc2dkl8"
+path="res://.godot/imported/Skeleton Walk.png-e0fd9b0dfd4b525c426d09cc5096de59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemy/Skeleton/Sprite Sheets/Skeleton Attack.png"
-dest_files=["res://.godot/imported/Skeleton Attack.png-5cb077f05f4516a5925611114de17297.ctex"]
+source_file="res://enemy/Skeleton/Sprite/Skeleton Walk.png"
+dest_files=["res://.godot/imported/Skeleton Walk.png-e0fd9b0dfd4b525c426d09cc5096de59.ctex"]
 
 [params]
 
