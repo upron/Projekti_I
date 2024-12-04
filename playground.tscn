@@ -1,20 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b63fmbfunx0rc"]
+[gd_scene load_steps=3 format=3 uid="uid://x1ppgfapeowq"]
 
-[ext_resource type="PackedScene" uid="uid://dx78rf0de53n4" path="res://Player/player.tscn" id="1_7yash"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" uid="uid://j4xbaayli7km" path="res://enemies/enemy.tscn" id="2_vt6al"]
-=======
-[ext_resource type="PackedScene" uid="uid://crg6xktas2rrw" path="res://Tile Maps/cave-01.tscn" id="2_juofd"]
->>>>>>> ab4a898f9e31dbc6c4a75ef2e27d15f650c8c642
+[ext_resource type="PackedScene" uid="uid://dx78rf0de53n4" path="res://Player/player.tscn" id="1_q3gx3"]
+[ext_resource type="PackedScene" uid="uid://crg6xktas2rrw" path="res://Tile Maps/cave-01.tscn" id="2_byvk2"]
 
-[node name="Playground" type="Node2D"]
-y_sort_enabled = true
+[node name="playground" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_7yash")]
+[node name="Player" parent="." instance=ExtResource("1_q3gx3")]
 
-<<<<<<< HEAD
-[node name="Skeleton" parent="." instance=ExtResource("2_vt6al")]
-position = Vector2(389, 250)
-=======
-[node name="Cave-01" parent="." instance=ExtResource("2_juofd")]
->>>>>>> ab4a898f9e31dbc6c4a75ef2e27d15f650c8c642
+[node name="Cave-01" parent="." instance=ExtResource("2_byvk2")]
