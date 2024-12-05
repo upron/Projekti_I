@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dx78rf0de53n4"]
+[gd_scene load_steps=24 format=3 uid="uid://dx78rf0de53n4"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://dejn7jpg18wlt" path="res://Player/sprites/AllP.png" id="2_6wf5x"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b8gxgs62hy6eg" path="res://Player/Audio/miekka.mp3" id="7_bi4xi"]
 [ext_resource type="PackedScene" uid="uid://dfpr3654pjjnx" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="8_6w8g3"]
 [ext_resource type="Script" path="res://Player/scripts/PlayerInteractionsHost.gd" id="8_pysmk"]
+[ext_resource type="Script" path="res://Player/scripts/PlayerCamera.gd" id="9_uum0w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vg5n"]
 radius = 8.0
@@ -292,6 +293,8 @@ attack_sound = ExtResource("7_bi4xi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+editor_draw_limits = true
+script = ExtResource("9_uum0w")
 
 [node name="Audio" type="Node2D" parent="."]
 
