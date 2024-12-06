@@ -432,7 +432,6 @@ max_polyphony = 4
 script = ExtResource("8_pysmk")
 
 [node name="HitBox" parent="." instance=ExtResource("11_m37t1")]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-3, 0)

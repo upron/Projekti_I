@@ -417,6 +417,9 @@ attack_sound = ExtResource("7_bi4xi")
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("9_id4wr")
+knockback_speed = null
+decelerate_speed = null
+invulnerable_duration = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -432,7 +435,6 @@ max_polyphony = 4
 script = ExtResource("8_pysmk")
 
 [node name="HitBox" parent="." instance=ExtResource("11_m37t1")]
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-3, 0)
