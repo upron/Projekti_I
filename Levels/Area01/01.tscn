@@ -14,6 +14,7 @@ script = ExtResource("1_s84cl")
 position = Vector2(607, 123)
 
 [node name="LevelTransition" parent="." instance=ExtResource("4_m8e4i")]
-position = Vector2(19, 51)
+position = Vector2(16, 48)
 level = "res://playground.tscn"
+center_player = true
 size = 3

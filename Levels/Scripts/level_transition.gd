@@ -65,7 +65,7 @@ func get_offset() -> Vector2:
 			offset.y = 0
 		else:
 			offset.y = player_pos.y - global_position.y
-		offset.x = 16
+		offset.x = 8
 		if side == SIDE.LEFT:
 			offset.x *= -1
 	else:
@@ -73,7 +73,7 @@ func get_offset() -> Vector2:
 			offset.x = 0
 		else:
 			offset.x = player_pos.x - global_position.x
-		offset.y = 16
+		offset.y = 8
 		if side == SIDE.TOP:
 			offset.y *= -1
 
@@ -82,21 +82,21 @@ func get_offset() -> Vector2:
 
 
 func _update_area() -> void:
-	var new_rect : Vector2 = Vector2( 32, 32 )
+	var new_rect : Vector2 = Vector2( 16, 16 )
 	var new_position : Vector2 = Vector2.ZERO
 	
 	if side == SIDE.TOP:
 		new_rect.x *= size
-		new_position.y -= 16
+		new_position.y -= 8
 	elif side == SIDE.BOTTOM:
 		new_rect.x *= size
-		new_position.y += 16
+		new_position.y += 8
 	elif side == SIDE.LEFT:
 		new_rect.y *= size
-		new_position.x -= 16
+		new_position.x -= 8
 	elif side == SIDE.RIGHT:
 		new_rect.y *= size
-		new_position.x += 16
+		new_position.x += 8
 	
 	if collision_shape == null:
 		collision_shape = get_node("CollisionShape2D")
@@ -106,5 +106,5 @@ func _update_area() -> void:
 
 
 func _snap_to_grid() -> void:
-	position.x = round( position.x / 16 ) * 16
-	position.y = round( position.y / 16 ) * 16
+	position.x = round( position.x / 8 ) * 8
+	position.y = round( position.y / 8 ) * 8
