@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bkr5cdfm8dmya"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_44bby"]
+[ext_resource type="Texture2D" uid="uid://cstkjtcwc4647" path="res://Items/sprites/items.png" id="2_fs3m1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3w2j"]
+atlas = ExtResource("2_fs3m1")
+region = Rect2(32, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_44bby")
+name = "Potion "
+description = "This red potion restores yours 1 hp."
+texture = SubResource("AtlasTexture_b3w2j")
