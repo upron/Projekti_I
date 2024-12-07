@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://GUI/pause_menu/pause_menu.gd" id="1_fhtxe"]
 [ext_resource type="Texture2D" uid="uid://cstkjtcwc4647" path="res://Items/sprites/items.png" id="2_1nlxy"]
-[ext_resource type="Script" path="res://GUI/pause_menu/Inventory/Scripts/inventory_ui.gd" id="3_0t3h0"]
-[ext_resource type="PackedScene" uid="uid://dj34f5at1xkx0" path="res://GUI/pause_menu/Inventory/inventory_slot.tscn" id="3_c3mth"]
-[ext_resource type="Resource" uid="uid://br3lanryvwivm" path="res://GUI/pause_menu/Inventory/player_inventory.tres" id="4_dy0l1"]
+[ext_resource type="Script" path="res://GUI/pause_menu/inventory/Scripts/inventory_ui.gd" id="3_0t3h0"]
+[ext_resource type="PackedScene" uid="uid://dj34f5at1xkx0" path="res://GUI/pause_menu/inventory/inventory_slot.tscn" id="3_c3mth"]
+[ext_resource type="Resource" uid="uid://br3lanryvwivm" path="res://GUI/pause_menu/inventory/player_inventory.tres" id="4_dy0l1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xv3e"]
 atlas = ExtResource("2_1nlxy")
@@ -69,7 +69,6 @@ offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 10
-text = "This red potion restores yours 1 hp."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -126,3 +125,6 @@ layout_mode = 2
 size_flags_horizontal = 0
 text = "Load
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
