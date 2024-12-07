@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://drxgdq3m20g76"]
+[gd_scene load_steps=35 format=3 uid="uid://dx78rf0de53n4"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://tya4ftu5kww3" path="res://Player/sprites/AllP-sheet.png" id="2_43krn"]
@@ -299,7 +299,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if1ss"]
-radius = 5.0
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_602rt"]
 length = 0.001
@@ -432,11 +432,9 @@ max_polyphony = 4
 script = ExtResource("8_pysmk")
 
 [node name="HitBox" parent="." instance=ExtResource("11_m37t1")]
-position = Vector2(0, -1)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-3, 2)
+position = Vector2(-3, 0)
 shape = SubResource("CircleShape2D_if1ss")
 debug_color = Color(0.595485, 0.632654, 0.0474217, 0.42)
 

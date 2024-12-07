@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://drxgdq3m20g76"]
+[gd_scene load_steps=35 format=3 uid="uid://dx78rf0de53n4"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://tya4ftu5kww3" path="res://Player/sprites/AllP-sheet.png" id="2_43krn"]
@@ -182,54 +182,6 @@ tracks/0/keys = {
 "values": [6, 8]
 }
 
-[sub_resource type="Animation" id="Animation_nhe4a"]
-resource_name = "stun_down"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [63, 66]
-}
-
-[sub_resource type="Animation" id="Animation_0t0kx"]
-resource_name = "stun_side"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [59, 62]
-}
-
-[sub_resource type="Animation" id="Animation_n7rj3"]
-resource_name = "stun_up"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.766667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [67, 70]
-}
-
 [sub_resource type="Animation" id="Animation_raftd"]
 resource_name = "walk_down"
 length = 0.9
@@ -281,6 +233,54 @@ tracks/0/keys = {
 "values": [27, 35]
 }
 
+[sub_resource type="Animation" id="Animation_nhe4a"]
+resource_name = "stun_down"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [63, 66]
+}
+
+[sub_resource type="Animation" id="Animation_0t0kx"]
+resource_name = "stun_side"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [59, 62]
+}
+
+[sub_resource type="Animation" id="Animation_n7rj3"]
+resource_name = "stun_up"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.766667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [67, 70]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bg68"]
 _data = {
 "RESET": SubResource("Animation_l4rkw"),
@@ -299,7 +299,22 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_if1ss"]
-radius = 5.0
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_o006s"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_602rt"]
 length = 0.001
@@ -345,21 +360,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_o006s"]
-resource_name = "default"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dqbng"]
 _data = {
@@ -432,11 +432,9 @@ max_polyphony = 4
 script = ExtResource("8_pysmk")
 
 [node name="HitBox" parent="." instance=ExtResource("11_m37t1")]
-position = Vector2(0, -1)
-collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(-3, 2)
+position = Vector2(-3, 0)
 shape = SubResource("CircleShape2D_if1ss")
 debug_color = Color(0.595485, 0.632654, 0.0474217, 0.42)
 
