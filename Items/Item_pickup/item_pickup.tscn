@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7v7x1t8cmy2c"]
+
+[ext_resource type="Script" path="res://Items/Item_pickup/item_pickup.gd" id="1_78xox"]
+[ext_resource type="Texture2D" uid="uid://b3qtg4nwmyyh6" path="res://Player/sprites/Shadow.png" id="2_0wa5s"]
+[ext_resource type="AudioStream" uid="uid://dlx1ko004sngu" path="res://Items/Item_pickup/item_pickup.wav" id="2_42jy1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yd0v4"]
+
+[sub_resource type="Animation" id="Animation_dimtc"]
+resource_name = "default"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.55, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, -3), Vector2(0, -6), Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dvlxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fjbv"]
+_data = {
+"RESET": SubResource("Animation_dvlxk"),
+"default": SubResource("Animation_dimtc")
+}
+
+[node name="ItemPickup" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 16
+motion_mode = 1
+script = ExtResource("1_78xox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yd0v4")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_yd0v4")
+
+[node name="Shadow_Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.588235)
+position = Vector2(0, 7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0wa5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_42jy1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7fjbv")
+}
+autoplay = "default"

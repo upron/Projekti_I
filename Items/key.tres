@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://cs2gx1mb10f5k"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_mfkxx"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="2_whydq"]
+[ext_resource type="Texture2D" uid="uid://b1k6ui3w1jj7w" path="res://Items/sprites/key1.png" id="3_i240s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m37d"]
+atlas = ExtResource("3_i240s")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_whydq")
+name = "Key"
+description = "There must be a door in here somewhere."
+texture = SubResource("AtlasTexture_1m37d")
+effects = Array[ExtResource("1_mfkxx")]([null])
