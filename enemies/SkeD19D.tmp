@@ -18,10 +18,6 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jiwty"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3wxy"]
-radius = 2.0
-height = 10.0
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_livun"]
 radius = 14.0
 height = 32.0
@@ -56,7 +52,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_pjx1h"]
 resource_name = "attack_down"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -85,7 +80,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_1dvbq"]
 resource_name = "attack_side"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,7 +108,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_0mvp5"]
 resource_name = "attack_up"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -669,6 +662,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83mlo"]
 size = Vector2(24, 20)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j3wxy"]
+radius = 2.0
+height = 10.0
+
 [node name="Skeleton" type="CharacterBody2D"]
 position = Vector2(37, -20)
 collision_layer = 256
@@ -688,14 +685,6 @@ texture = ExtResource("2_7hijk")
 hframes = 22
 vframes = 3
 frame = 23
-
-[node name="HurtBox" parent="Sprite2D" instance=ExtResource("2_f8p03")]
-position = Vector2(-2, 6)
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
-shape = SubResource("CapsuleShape2D_j3wxy")
-debug_color = Color(0.972549, 0, 0.0941176, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_livun")
@@ -734,7 +723,7 @@ next_state = NodePath("../Wander")
 script = ExtResource("13_bhs0e")
 attack_area = NodePath("../../AttackArea")
 next_state = NodePath("../Wander")
-hurt_box = NodePath("../../Sprite2D/HurtBox")
+hurt_box = NodePath("../../Interactions/HurtBox")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
@@ -752,3 +741,13 @@ position = Vector2(22, 5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("RectangleShape2D_83mlo")
 debug_color = Color(0, 0.270588, 0.670588, 0.85098)
+
+[node name="Interactions" type="Node2D" parent="."]
+position = Vector2(7, -15)
+
+[node name="HurtBox" parent="Interactions" instance=ExtResource("2_f8p03")]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/HurtBox"]
+shape = SubResource("CapsuleShape2D_j3wxy")
+debug_color = Color(0.972549, 0, 0.0941176, 0.419608)

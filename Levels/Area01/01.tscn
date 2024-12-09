@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bofwx4m0g3v01" path="res://Levels/level_transition.tscn" id="4_m8e4i"]
 
 [node name="01" type="Node2D"]
+position = Vector2(-3, 18)
 script = ExtResource("1_s84cl")
 
 [node name="Cave-01" parent="." instance=ExtResource("1_hlt0s")]

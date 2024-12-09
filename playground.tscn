@@ -10,12 +10,15 @@
 script = ExtResource("1_diqjg")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_uhmji")]
-position = Vector2(1104, 107)
+position = Vector2(401, 69)
 
 [node name="Cave-01" parent="." instance=ExtResource("2_byvk2")]
 
 [node name="Skeleton" parent="." instance=ExtResource("3_lvmgo")]
 position = Vector2(298, 208)
+
+[node name="Skeleton2" parent="." instance=ExtResource("3_lvmgo")]
+position = Vector2(176, 214)
 
 [node name="LevelTransition" parent="." instance=ExtResource("5_tnm6p")]
 position = Vector2(1104, 64)
