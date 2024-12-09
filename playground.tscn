@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://j4xbaayli7km" path="res://enemies/Skeleton.tscn" id="3_lvmgo"]
 [ext_resource type="PackedScene" uid="uid://c1142duh07b1p" path="res://Levels/player_spawn.tscn" id="4_uhmji"]
 [ext_resource type="PackedScene" uid="uid://bofwx4m0g3v01" path="res://Levels/level_transition.tscn" id="5_tnm6p"]
+[ext_resource type="PackedScene" uid="uid://b8hukab17ut8a" path="res://boss_room.tscn" id="6_ts5rv"]
 
 [node name="playground" type="Node2D"]
 script = ExtResource("1_diqjg")
@@ -14,7 +15,11 @@ script = ExtResource("1_diqjg")
 position = Vector2(237, -99)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("4_uhmji")]
+<<<<<<< Updated upstream
 position = Vector2(694, 72)
+=======
+position = Vector2(831, 89)
+>>>>>>> Stashed changes
 
 [node name="Cave-01" parent="." instance=ExtResource("2_byvk2")]
 
@@ -27,3 +32,6 @@ level = "res://Levels/Area01/01.tscn"
 center_player = true
 size = 4
 side = 3
+
+[node name="BossRoom" parent="." instance=ExtResource("6_ts5rv")]
+position = Vector2(248, -100)
