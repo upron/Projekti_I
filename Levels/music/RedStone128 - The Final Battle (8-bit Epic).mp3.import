@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b70aa3es8c1y5"
+path="res://.godot/imported/RedStone128 - The Final Battle (8-bit Epic).mp3-e56a99a3a9eee69aaad410860d78d0eb.mp3str"
+
+[deps]
+
+source_file="res://Levels/music/RedStone128 - The Final Battle (8-bit Epic).mp3"
+dest_files=["res://.godot/imported/RedStone128 - The Final Battle (8-bit Epic).mp3-e56a99a3a9eee69aaad410860d78d0eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

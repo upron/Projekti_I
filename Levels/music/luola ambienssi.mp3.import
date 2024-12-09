@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drbv324ebl8qi"
+path="res://.godot/imported/luola ambienssi.mp3-4c0b9edf281441efc237a4497e356189.mp3str"
+
+[deps]
+
+source_file="res://Levels/music/luola ambienssi.mp3"
+dest_files=["res://.godot/imported/luola ambienssi.mp3-4c0b9edf281441efc237a4497e356189.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
