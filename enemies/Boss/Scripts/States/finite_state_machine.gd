@@ -1,4 +1,4 @@
-class_name BossStateMachine extends Node
+class_name BossStateMachine extends BossState
 
 
 var states : Array[ BossState ]

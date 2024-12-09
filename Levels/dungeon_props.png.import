@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwhidyfqu7dkd"
-path="res://.godot/imported/dungeon_props.png-52fbb08aa3a8a62db587a7a7fbeca7a2.ctex"
+path="res://.godot/imported/dungeon_props.png-ed9dbcf3b32226f8935663d1df5635ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tile Maps/sprites/dungeon_props.png"
-dest_files=["res://.godot/imported/dungeon_props.png-52fbb08aa3a8a62db587a7a7fbeca7a2.ctex"]
+source_file="res://Levels/dungeon_props.png"
+dest_files=["res://.godot/imported/dungeon_props.png-ed9dbcf3b32226f8935663d1df5635ea.ctex"]
 
 [params]
 

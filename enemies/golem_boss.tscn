@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://enemies/Boss/Scripts/golem_boss.gd" id="1_6is7w"]
 [ext_resource type="Texture2D" uid="uid://ct1ch7wuxki5t" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_bjnbw"]
 [ext_resource type="Texture2D" uid="uid://k7470vniuyif" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/weapon PNG/Laser_sheet.png" id="2_xmrk6"]
-[ext_resource type="Script" path="res://enemies/Scripts/States/finite_state_machine.gd" id="3_xwkfw"]
+[ext_resource type="Script" path="res://enemies/Boss/Scripts/States/finite_state_machine.gd" id="3_xwkfw"]
 [ext_resource type="Script" path="res://enemies/Boss/Scripts/States/boss_idle.gd" id="5_uloy4"]
 [ext_resource type="Script" path="res://enemies/Boss/Scripts/States/boss_follow.gd" id="6_8oeqh"]
 [ext_resource type="Script" path="res://enemies/Boss/Scripts/States/boss_melee_attack.gd" id="7_ddey3"]
