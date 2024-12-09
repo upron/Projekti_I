@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://j4xbaayli7km"]
+[gd_scene load_steps=41 format=3 uid="uid://j4xbaayli7km"]
 
 [ext_resource type="Script" path="res://enemies/Scripts/enemy.gd" id="1_4clfc"]
 [ext_resource type="Texture2D" uid="uid://crllfptkdptyt" path="res://enemies/Skeleton/Sprite Sheets/Skeleton-sheet.png" id="2_7hijk"]
@@ -11,9 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://bcgqdqr0jn1in" path="res://enemies/Skeleton/Audio/luuranko 2.mp3" id="5_y8gj1"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_stun.gd" id="9_aawf4"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_destroy.gd" id="11_u00ob"]
+[ext_resource type="Script" path="res://enemies/Scripts/drop_data.gd" id="12_i4ghv"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_chase.gd" id="12_pdar7"]
 [ext_resource type="PackedScene" uid="uid://dv2t5dw8fkvpx" path="res://enemies/vision_area.tscn" id="13_6j2ht"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_attack.gd" id="13_bhs0e"]
+[ext_resource type="Resource" uid="uid://bkr5cdfm8dmya" path="res://Items/potion.tres" id="13_grtu5"]
 [ext_resource type="PackedScene" uid="uid://dw1ppcvwap761" path="res://enemies/AttackArea.tscn" id="14_joq0f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jiwty"]
@@ -666,6 +668,13 @@ _data = {
 "walk_up": SubResource("Animation_vs84c")
 }
 
+[sub_resource type="Resource" id="Resource_xv4tk"]
+script = ExtResource("12_i4ghv")
+item = ExtResource("13_grtu5")
+probability = 100.0
+min_amount = 1
+max_amount = 1
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83mlo"]
 size = Vector2(24, 20)
 
@@ -724,6 +733,7 @@ next_state = NodePath("../Chase")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("11_u00ob")
+drops = Array[ExtResource("12_i4ghv")]([SubResource("Resource_xv4tk")])
 
 [node name="Chase" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("vision_area", "next_state")]
 script = ExtResource("12_pdar7")

@@ -10,15 +10,17 @@
 script = ExtResource("1_u7gpb")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_c1awf")]
-position = Vector2(1074, 114)
+position = Vector2(400, 72)
 
 [node name="Cave-01" parent="." instance=ExtResource("3_6iip4")]
 
 [node name="Skeleton" parent="." instance=ExtResource("5_kinv2")]
 position = Vector2(298, 208)
+motion_mode = 1
 
 [node name="Skeleton2" parent="." instance=ExtResource("5_kinv2")]
 position = Vector2(176, 214)
+motion_mode = 1
 
 [node name="LevelTransition" parent="." instance=ExtResource("6_7npn1")]
 position = Vector2(1104, 64)

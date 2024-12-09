@@ -1,7 +1,6 @@
 class_name EnemyStateAttack extends EnemyState
 
 @onready var wander: EnemyStateWander = $"../Wander"
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @export var turn_rate : float = 0.25
 @export_range(1,20,0.5)  var decelerate_speed : float = 5.0
 
@@ -24,7 +23,6 @@ func init() -> void:
 ## What happens when the enemy enters this State?
 func enter() -> void:
 	enemy.update_animation( "attack" )
-	animation_player.animation_finished.connect( _on_player_enter )
 	
 	hurt_box.monitoring = true
 	pass
@@ -32,7 +30,6 @@ func enter() -> void:
 	
 ## What happens when the enemy exits this State?
 func exit() -> void:
-	animation_player.animation_finished.disconnect( _on_player_exit)
 	attacking = false
 	hurt_box.monitoring = false
 	pass
