@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crllfptkdptyt" path="res://enemies/Skeleton/Sprite Sheets/Skeleton-sheet.png" id="2_7hijk"]
 [ext_resource type="PackedScene" uid="uid://qdby4xo3xo6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_a7v85"]
 [ext_resource type="PackedScene" uid="uid://dfpr3654pjjnx" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="2_f8p03"]
-[ext_resource type="Script" path="res://enemies/Scripts/enemy_state_machine.gd" id="3_rkmfk"]
+[ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_machine.gd" id="3_rkmfk"]
 [ext_resource type="AudioStream" uid="uid://cb3srw8v4vmr6" path="res://enemies/Skeleton/Audio/luuranko 1.mp3" id="4_jwm6u"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_idle.gd" id="4_nbeel"]
 [ext_resource type="Script" path="res://enemies/Scripts/States/enemy_state_wander.gd" id="5_hjfy5"]

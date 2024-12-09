@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://crg6xktas2rrw"]
 
-[ext_resource type="Texture2D" uid="uid://dvoj2m0jh37bx" path="res://Tile Maps/sprites/mainlevbuild-sheet.png" id="1_xhk1b"]
+[ext_resource type="Texture2D" uid="uid://dvoj2m0jh37bx" path="res://Levels/mainlevbuild-sheet.png" id="1_xhk1b"]
 [ext_resource type="Script" path="res://Tile Maps/LevelTileMap.gd" id="2_dsoja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rqjev"]
