@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://drxgdq3m20g76"]
+[gd_scene load_steps=38 format=3 uid="uid://drxgdq3m20g76"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://tya4ftu5kww3" path="res://Player/sprites/AllP-sheet.png" id="2_43krn"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Player/scripts/PlayerInteractionsHost.gd" id="8_pysmk"]
 [ext_resource type="Script" path="res://Player/scripts/States/state_stun.gd" id="9_id4wr"]
 [ext_resource type="Script" path="res://Player/scripts/PlayerCamera.gd" id="9_uum0w"]
+[ext_resource type="Script" path="res://Player/scripts/States/state_death.gd" id="10_40hbb"]
 [ext_resource type="PackedScene" uid="uid://qdby4xo3xo6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="11_m37t1"]
 [ext_resource type="AudioStream" uid="uid://cqt50d4y8c51r" path="res://Player/Audio/Osumaääni.mp3" id="12_mkaba"]
 
@@ -281,12 +282,40 @@ tracks/0/keys = {
 "values": [27, 35]
 }
 
+[sub_resource type="Animation" id="Animation_7mpvv"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D/AttackHurtBox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 12)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bg68"]
 _data = {
 "RESET": SubResource("Animation_l4rkw"),
 "attack_down": SubResource("Animation_xk32i"),
 "attack_side": SubResource("Animation_etw2v"),
 "attack_up": SubResource("Animation_asrmb"),
+"death": SubResource("Animation_7mpvv"),
 "idle_down": SubResource("Animation_22e16"),
 "idle_side": SubResource("Animation_k0b3k"),
 "idle_up": SubResource("Animation_8ofje"),
@@ -419,6 +448,9 @@ attack_sound = ExtResource("7_bi4xi")
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("9_id4wr")
+
+[node name="Death" type="Node" parent="StateMachine"]
+script = ExtResource("10_40hbb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

@@ -9,8 +9,8 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 
 var invulnerable : bool = false
-var hp : int = 6
-var max_hp : int = 6
+var hp : int = 20
+var max_hp : int = 20
 
 
 
@@ -27,7 +27,7 @@ func _ready():
 	PlayerManager.player = self
 	state_machine.Initialize(self)
 	hit_box.damaged.connect( _take_damage )
-	update_hp(99)
+	update_hp(0)
 	pass
 	
 func _process(_delta): 
@@ -71,19 +71,20 @@ func anim_direction() -> String:
 	else: 
 		return "side"
 		
+		
+func update_hp( delta : int) -> void:
+	hp = clampi(hp + delta, 0, max_hp )
+	PlayerHub.update_hp( hp, max_hp )
+	pass
+	
 func _take_damage ( hurt_box: HurtBox ) -> void:
 	if invulnerable == true:
 		return
-	update_hp( -hurt_box.damage)
-	if hp > 0:
-		player_damaged.emit( hurt_box )
-	else:
-		player_damaged.emit( hurt_box )
-		update_hp( 99 )
-	pass
 	
-func update_hp( delta : int) -> void:
-	hp = clampi(hp + delta, 0, max_hp )
+	if hp > 0:
+		update_hp( -hurt_box.damage )
+		player_damaged.emit( hurt_box )
+	
 	pass
 	
 func make_invulnerable ( _duration : float = 1.0  ) -> void:
@@ -95,3 +96,7 @@ func make_invulnerable ( _duration : float = 1.0  ) -> void:
 	invulnerable = false
 	hit_box.monitoring = true
 	pass
+	
+func revive_player() -> void:
+	update_hp( 20 )
+	state_machine.change_state( $StateMachine/Idle )
