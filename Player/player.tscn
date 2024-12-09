@@ -420,6 +420,8 @@ attack_sound = ExtResource("7_bi4xi")
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("9_id4wr")
 
+[node name="Death" type="Node" parent="StateMachine"]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 editor_draw_limits = true
