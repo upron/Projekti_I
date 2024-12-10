@@ -21,8 +21,6 @@ var max_hp : int = 20
 @onready var hit_box: HitBox = $HitBox
 
 
-
-
 func _ready():
 	PlayerManager.player = self
 	state_machine.Initialize(self)

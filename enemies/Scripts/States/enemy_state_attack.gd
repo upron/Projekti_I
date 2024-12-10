@@ -22,6 +22,11 @@ func init() -> void:
 	
 ## What happens when the enemy enters this State?
 func enter() -> void:
+	if enemy.is_dead:
+		print("EnemyStateAttack: Enemy is dead, skipping enter logic.")
+		return
+	
+	
 	enemy.update_animation( "attack" )
 	
 	hurt_box.monitoring = true

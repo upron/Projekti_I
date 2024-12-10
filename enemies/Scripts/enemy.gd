@@ -12,6 +12,7 @@ var cardinal_direction : Vector2 = Vector2.DOWN
 var direction : Vector2 = Vector2.ZERO
 var player : Player
 var invulnerable : bool = false
+var is_dead: bool = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
@@ -29,7 +30,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
 func _physics_process(_delta):
 	move_and_slide()
 	
@@ -75,3 +75,7 @@ func _take_damage (hurt_box : HurtBox) -> void:
 		enemy_damaged.emit( hurt_box )
 	else:
 		enemy_destroyed.emit( hurt_box )
+		
+func die():
+	is_dead = true
+	print("Enemy has died.")

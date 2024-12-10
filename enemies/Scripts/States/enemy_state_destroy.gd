@@ -13,6 +13,7 @@ const PICKUP = preload("res://Items/Item_pickup/item_pickup.tscn")
 var _damage_position : Vector2
 var _direction : Vector2
 
+signal enemy_died  
 
 ## What happens when we initialize this state?
 func init() -> void:
@@ -82,6 +83,7 @@ func disable_vision_area() -> void:
 func drop_items() -> void:
 	if drops.size() == 0:
 		print("No items to drop.")
+		emit_signal("enemy_died")
 		return
 
 	for i in drops.size():
@@ -95,6 +97,7 @@ func drop_items() -> void:
 			drop.global_position = enemy.global_position
 			drop.velocity = enemy.velocity.rotated(randf_range(-1.5, 1.5)) * randf_range(0.9, 1.5)
 	print("Items dropped.")
+	emit_signal("enemy_died")
 	pass
 
 

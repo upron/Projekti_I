@@ -1,31 +1,22 @@
 class_name BossState extends Node
 
 
-## Stores a reference to the enemy that this state belongs to
-var boss : Boss
-var state_machine : BossStateMachine
-
-
-## What happens when we initialize this state?
-func init() -> void:
+@onready var debug = owner.find_child("debug")
+@onready var player : Player
+@onready var animation_player = owner.find_child("AnimationPlayer")
+ 
+func _ready():
+	set_physics_process(false)
+ 
+func enter():
+	set_physics_process(true)
+ 
+func exit():
+	set_physics_process(false)
+ 
+func transition():
 	pass
-	
-	
-## What happens when the enemy enters this State?
-func enter() -> void:
-	pass
-	
-	
-## What happens when the enemy exits this State?
-func exit() -> void:
-	pass
-	
-	
-## What happens during the _process update in this State?
-func process( _delta : float ) -> BossState:
-	return null
-	
-	
-## What happens during the _physics_process update in this State?
-func physics( _delta : float ) -> BossState:
-	return null
+ 
+func _physics_process(_delta):
+	transition()
+	debug.text = name
