@@ -66,6 +66,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(11, -3)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/HurtBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.712094]
+}
 
 [sub_resource type="Animation" id="Animation_pjx1h"]
 resource_name = "attack_down"
@@ -94,6 +106,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(9, -21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/HurtBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.4, 0.5, 0.6, 0.633333, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -3), Vector2(8, -3), Vector2(-11, -9), Vector2(-11, -9), Vector2(-11, -9), Vector2(-9, -6), Vector2(10, 22), Vector2(12, 19), Vector2(13, 9), Vector2(13, 9), Vector2(10, -1), Vector2(10, -3), Vector2(11, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/HurtBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5, 0.566667, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, -0.712094, -0.846485, -1.55858, -1.55858, -2.03331, -2.03331, -2.7454, -2.98277, -3.22013]
 }
 
 [sub_resource type="Animation" id="Animation_1dvbq"]
@@ -131,10 +167,22 @@ tracks/2/path = NodePath("Sprite2D/HurtBox:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(10, -3), Vector2(9, -3), Vector2(-10, -10)]
+"times": PackedFloat32Array(0, 0.366667, 0.4, 0.5, 0.6, 0.633333, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -3), Vector2(8, -3), Vector2(-11, -9), Vector2(-11, -9), Vector2(-11, -9), Vector2(-9, -6), Vector2(10, 22), Vector2(12, 19), Vector2(13, 9), Vector2(13, 9), Vector2(10, -1), Vector2(10, -3), Vector2(11, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/HurtBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5, 0.566667, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, -0.712094, -0.846485, -1.55858, -1.55858, -2.03331, -2.03331, -2.7454, -2.98277, -3.22013]
 }
 
 [sub_resource type="Animation" id="Animation_0mvp5"]
@@ -164,6 +212,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(9, -21)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/HurtBox:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.4, 0.5, 0.6, 0.633333, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(11, -3), Vector2(8, -3), Vector2(-11, -9), Vector2(-11, -9), Vector2(-11, -9), Vector2(-9, -6), Vector2(10, 22), Vector2(12, 19), Vector2(13, 9), Vector2(13, 9), Vector2(10, -1), Vector2(10, -3), Vector2(11, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D/HurtBox:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.5, 0.566667, 0.733333, 1.36667, 1.4, 1.46667, 1.53333, 1.66667, 1.86667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.0, -0.712094, -0.846485, -1.55858, -1.55858, -2.03331, -2.03331, -2.7454, -2.98277, -3.22013]
 }
 
 [sub_resource type="Animation" id="Animation_gf1jg"]
@@ -721,6 +793,7 @@ frame = 23
 
 [node name="HurtBox" parent="Sprite2D" instance=ExtResource("2_f8p03")]
 position = Vector2(11, -3)
+rotation = -0.712094
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
