@@ -1537,6 +1537,12 @@ tile_map_data = PackedByteArray("AAAAAP//AAAoAAAAAAAAAAAAAAAoAAEAAAAAAAEAAAAoAAI
 tile_set = SubResource("TileSet_6q5dx")
 script = ExtResource("3_msdmq")
 
+[node name="PlayerSpawn" parent="." instance=ExtResource("7_qrbv2")]
+position = Vector2(269, 66)
+
+[node name="LockedDoor" parent="." instance=ExtResource("10_m5ef2")]
+position = Vector2(1065, 415)
+
 [node name="LevelTransition" parent="." instance=ExtResource("6_o3r4e")]
 position = Vector2(9, 92)
 level = "res://Levels/Area01/playground.tscn"
@@ -1554,9 +1560,6 @@ side = 2
 position = Vector2(1092, 323)
 side = 3
 
-[node name="PlayerSpawn" parent="." instance=ExtResource("7_qrbv2")]
-position = Vector2(269, 66)
-
 [node name="GolemBoss" parent="." instance=ExtResource("8_elqfj")]
 position = Vector2(766, 126)
 
@@ -1568,6 +1571,3 @@ position = Vector2(49, 68)
 level = "res://Levels/Area01/playground.tscn"
 size = 4
 side = 2
-
-[node name="LockedDoor" parent="." instance=ExtResource("10_m5ef2")]
-position = Vector2(1065, 415)
