@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bofwx4m0g3v01" path="res://Levels/level_transition.tscn" id="6_o3r4e"]
 [ext_resource type="PackedScene" uid="uid://c1142duh07b1p" path="res://Levels/player_spawn.tscn" id="7_qrbv2"]
 [ext_resource type="PackedScene" uid="uid://dyuceth1stk3r" path="res://enemies/Boss/golem_boss.tscn" id="8_elqfj"]
-[ext_resource type="PackedScene" uid="uid://j4xbaayli7km" path="res://enemies/Skeleton.tscn" id="9_n2bej"]
+[ext_resource type="PackedScene" uid="uid://cguhwvas7dt18" path="res://enemies/Skeleton.tscn" id="9_n2bej"]
 [ext_resource type="PackedScene" uid="uid://d01d18nt5hyef" path="res://Interactables/boss_room/locked_door.tscn" id="10_m5ef2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dypys"]
