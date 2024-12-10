@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://biptxjwyjypm6"
+path="res://.godot/imported/luuranko 1.mp3-1b289ccc01c1db24582abf9158319ab9.mp3str"
+
+[deps]
+
+source_file="res://enemies/DoorKeeper/Audio/luuranko 1.mp3"
+dest_files=["res://.godot/imported/luuranko 1.mp3-1b289ccc01c1db24582abf9158319ab9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
