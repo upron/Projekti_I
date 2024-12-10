@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dyuceth1stk3r"]
+[gd_scene load_steps=29 format=3 uid="uid://dyuceth1stk3r"]
 
 [ext_resource type="Texture2D" uid="uid://ct1ch7wuxki5t" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_bjnbw"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/golem_boss.gd" id="1_lfxpg"]
@@ -14,6 +14,9 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8h1sj"]
 height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fljjf"]
+size = Vector2(249, 8.75)
 
 [sub_resource type="Animation" id="Animation_ti780"]
 length = 0.001
@@ -52,6 +55,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Sprite2D/HurtBox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ba2h7"]
@@ -259,6 +274,18 @@ tracks/1/keys = {
 "method": &"set_target"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot/Sprite2D/HurtBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.875),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_aspei"]
 resource_name = "laser_cast"
@@ -385,6 +412,7 @@ hframes = 10
 vframes = 10
 
 [node name="HurtBox" parent="Sprite2D" instance=ExtResource("3_weuba")]
+position = Vector2(0, 1)
 collision_mask = 0
 monitoring = false
 
@@ -399,6 +427,14 @@ position = Vector2(2, -17)
 position = Vector2(98, 17)
 texture = ExtResource("2_xmrk6")
 vframes = 15
+
+[node name="HurtBox" parent="Pivot/Sprite2D" instance=ExtResource("3_weuba")]
+position = Vector2(-98, -17)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Sprite2D/HurtBox"]
+position = Vector2(122, 1)
+shape = SubResource("RectangleShape2D_fljjf")
+debug_color = Color(0.966197, 8.66354e-07, 0.482028, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -497,6 +533,7 @@ position = Vector2(0, 1)
 collision_layer = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_kywl3")
 debug_color = Color(0.655872, 0.5157, 0.0840454, 0.42)
 
