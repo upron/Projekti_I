@@ -13,7 +13,7 @@ script = ExtResource("1_u7gpb")
 music = ExtResource("6_26ox3")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("2_c1awf")]
-position = Vector2(394, 82)
+position = Vector2(906, 221)
 
 [node name="Cave-01" parent="." instance=ExtResource("3_6iip4")]
 

@@ -1,14 +1,19 @@
-[gd_scene load_steps=24 format=3 uid="uid://dyuceth1stk3r"]
+[gd_scene load_steps=28 format=3 uid="uid://dyuceth1stk3r"]
 
 [ext_resource type="Texture2D" uid="uid://ct1ch7wuxki5t" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_bjnbw"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/golem_boss.gd" id="1_lfxpg"]
 [ext_resource type="Texture2D" uid="uid://k7470vniuyif" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/weapon PNG/Laser_sheet.png" id="2_xmrk6"]
+[ext_resource type="PackedScene" uid="uid://dfpr3654pjjnx" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="3_weuba"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/idle.gd" id="4_kqcjf"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/boss_state_machine.gd" id="4_nbdev"]
-[ext_resource type="Script" path="res://enemies/Boss/scripts/states/boss_state.gd" id="5_012d8"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/follow.gd" id="5_ovhtl"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/melee_attack.gd" id="7_8iwkt"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/laser_beam.gd" id="10_7naow"]
+[ext_resource type="Script" path="res://enemies/Boss/scripts/states/death.gd" id="10_uqrn4"]
+[ext_resource type="PackedScene" uid="uid://qdby4xo3xo6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="11_txg17"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8h1sj"]
+height = 26.0
 
 [sub_resource type="Animation" id="Animation_ti780"]
 length = 0.001
@@ -365,15 +370,27 @@ height = 42.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uak5"]
 radius = 120.333
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kywl3"]
+radius = 23.0
+height = 50.0
+
 [node name="GolemBoss" type="CharacterBody2D"]
 collision_layer = 256
-collision_mask = 0
+collision_mask = 16
 script = ExtResource("1_lfxpg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bjnbw")
 hframes = 10
 vframes = 10
+
+[node name="HurtBox" parent="Sprite2D" instance=ExtResource("3_weuba")]
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
+shape = SubResource("CapsuleShape2D_8h1sj")
+debug_color = Color(0.819872, 0.029249, 0.261719, 0.921)
 
 [node name="Pivot" type="Node2D" parent="."]
 position = Vector2(2, -17)
@@ -404,7 +421,8 @@ offset_top = -27.0
 offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 0
-value = 100.0
+max_value = 30.0
+value = 30.0
 
 [node name="Label" type="Label" parent="UI/ProgressBar"]
 layout_mode = 1
@@ -472,6 +490,14 @@ script = ExtResource("7_8iwkt")
 script = ExtResource("10_7naow")
 
 [node name="Death" type="Node" parent="FiniteStateMachine"]
-script = ExtResource("5_012d8")
+script = ExtResource("10_uqrn4")
+
+[node name="HitBox" parent="." instance=ExtResource("11_txg17")]
+position = Vector2(0, 1)
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CapsuleShape2D_kywl3")
+debug_color = Color(0.655872, 0.5157, 0.0840454, 0.42)
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]
