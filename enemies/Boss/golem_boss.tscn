@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dyuceth1stk3r"]
+[gd_scene load_steps=32 format=3 uid="uid://dyuceth1stk3r"]
 
 [ext_resource type="Texture2D" uid="uid://ct1ch7wuxki5t" path="res://enemies/Boss/Sprite Sheets/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" id="1_bjnbw"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/golem_boss.gd" id="1_lfxpg"]
@@ -6,14 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://dfpr3654pjjnx" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="3_weuba"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/idle.gd" id="4_kqcjf"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/boss_state_machine.gd" id="4_nbdev"]
+[ext_resource type="AudioStream" uid="uid://i3ryhvek744s" path="res://enemies/Boss/audio/kivimörkö.mp3" id="5_oe1gr"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/follow.gd" id="5_ovhtl"]
+[ext_resource type="AudioStream" uid="uid://b07mqr5kvkwcu" path="res://enemies/Boss/audio/laserhyökkäys.mp3" id="6_r5cml"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/melee_attack.gd" id="7_8iwkt"]
+[ext_resource type="AudioStream" uid="uid://cyxexnocb6ooi" path="res://enemies/Boss/audio/kivimörkö 2.mp3" id="7_irsnb"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/laser_beam.gd" id="10_7naow"]
 [ext_resource type="Script" path="res://enemies/Boss/scripts/states/death.gd" id="10_uqrn4"]
 [ext_resource type="PackedScene" uid="uid://qdby4xo3xo6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="11_txg17"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8h1sj"]
-height = 26.0
+radius = 5.0
+height = 58.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fljjf"]
 size = Vector2(249, 8.75)
@@ -66,7 +70,19 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D/HurtBox:monitoring")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ba2h7"]
@@ -185,6 +201,21 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_oe1gr")
+}],
+"times": PackedFloat32Array(0.75)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nb6ax"]
 resource_name = "glowing"
@@ -286,6 +317,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [false, true, false]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_r5cml")
+}],
+"times": PackedFloat32Array(0.625)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_aspei"]
 resource_name = "laser_cast"
@@ -318,7 +364,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_n6u4b"]
 resource_name = "melee_attack"
-length = 0.875013
+length = 1.2
 loop_mode = 1
 step = 0.125
 tracks/0/type = "value"
@@ -345,6 +391,33 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/HurtBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, false, false, false, true, true]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_irsnb")
+}],
+"times": PackedFloat32Array(0.125)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fti2e"]
 resource_name = "ranged_attack"
@@ -412,11 +485,12 @@ hframes = 10
 vframes = 10
 
 [node name="HurtBox" parent="Sprite2D" instance=ExtResource("3_weuba")]
-position = Vector2(0, 1)
-collision_mask = 0
+position = Vector2(2, 10)
 monitoring = false
+damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/HurtBox"]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8h1sj")
 debug_color = Color(0.819872, 0.029249, 0.261719, 0.921)
 
@@ -430,6 +504,8 @@ vframes = 15
 
 [node name="HurtBox" parent="Pivot/Sprite2D" instance=ExtResource("3_weuba")]
 position = Vector2(-98, -17)
+monitoring = false
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Sprite2D/HurtBox"]
 position = Vector2(122, 1)
@@ -529,12 +605,12 @@ script = ExtResource("10_7naow")
 script = ExtResource("10_uqrn4")
 
 [node name="HitBox" parent="." instance=ExtResource("11_txg17")]
-position = Vector2(0, 1)
 collision_layer = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_kywl3")
 debug_color = Color(0.655872, 0.5157, 0.0840454, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="PlayerDetection" to="FiniteStateMachine/Idle" method="_on_player_detection_body_entered"]

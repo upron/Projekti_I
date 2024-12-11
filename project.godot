@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Projekti I"
-run/main_scene="res://Levels/Area01/playground.tscn"
+run/main_scene="res://title_scene/title_scene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/image="res://title_scene/Sprites/Folderlogo.png"
 config/icon="res://icon.svg"
 
 [audio]
@@ -22,8 +23,8 @@ buses/default_bus_layout="res://Levels/music/default_bus_layout.tres"
 [autoload]
 
 AudioManager="*res://00_Globals/global_audio_manager.gd"
-LevelManager="*res://00_Globals/global_level_manager.gd"
 PlayerHub="*res://GUI/player_hub/player_hub.tscn"
+LevelManager="*res://00_Globals/global_level_manager.gd"
 PlayerManager="*res://00_Globals/global_player_manager.gd"
 SceneTransition="*res://GUI/scene_transition/scene_transition.tscn"
 SaveManager="*res://00_Globals/global_save_manager.gd"

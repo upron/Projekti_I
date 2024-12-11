@@ -12,5 +12,5 @@ func enter() -> void:
 	audio.stream = exhaust_audio
 	audio.play()
 	PlayerHub.show_game_over_screen()
-	#AudioManager.play_music( null )
+	AudioManager.play_music( null )
 	pass

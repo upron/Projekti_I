@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://drxgdq3m20g76"]
+[gd_scene load_steps=39 format=3 uid="uid://drxgdq3m20g76"]
 
 [ext_resource type="Script" path="res://Player/scripts/Player.gd" id="1_6qh2d"]
 [ext_resource type="Texture2D" uid="uid://tya4ftu5kww3" path="res://Player/sprites/AllP-sheet.png" id="2_43krn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Player/scripts/States/state_stun.gd" id="9_id4wr"]
 [ext_resource type="Script" path="res://Player/scripts/PlayerCamera.gd" id="9_uum0w"]
 [ext_resource type="Script" path="res://Player/scripts/States/state_death.gd" id="10_40hbb"]
+[ext_resource type="AudioStream" uid="uid://13xkkxkbtpey" path="res://Player/Audio/Pelaajaan osuu (ei ehkä)  xD.mp3" id="11_4b61c"]
 [ext_resource type="PackedScene" uid="uid://qdby4xo3xo6" path="res://GeneralNodes/HitBox/hit_box.tscn" id="11_m37t1"]
 [ext_resource type="AudioStream" uid="uid://cqt50d4y8c51r" path="res://Player/Audio/Osumaääni.mp3" id="12_mkaba"]
 
@@ -451,6 +452,7 @@ script = ExtResource("9_id4wr")
 
 [node name="Death" type="Node" parent="StateMachine"]
 script = ExtResource("10_40hbb")
+exhaust_audio = ExtResource("11_4b61c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

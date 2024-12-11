@@ -1,15 +1,15 @@
 extends CanvasLayer
 
-#@export var button_focus_audio : AudioStream = preload( "res://title_scene/audio/menu_focus.wav" )
-#@export var button_select_audio : AudioStream = preload( "res://title_scene/audio/menu_select.wav" )
+@export var button_focus_audio : AudioStream = preload( "res://title_scene/Audio/menu_focus.wav" )
+@export var button_select_audio : AudioStream = preload( "res://title_scene/Audio/menu_select.wav" )
 
 var hearts : Array[ HeartGUI] = []
 
 @onready var game_over: Control = $Control/GameOver
-@onready var vontinue_button: Button = $Control/GameOver/VBoxContainer/VontinueButton
-@onready var tile_button: Button = $Control/GameOver/VBoxContainer/TileButton
+@onready var continue_button: Button = $Control/GameOver/VBoxContainer/ContinueButton
+@onready var title_button: Button = $Control/GameOver/VBoxContainer/TitleButton
 @onready var animation_player: AnimationPlayer = $Control/GameOver/AnimationPlayer
-@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
 
 
 
@@ -20,10 +20,10 @@ func _ready():
 			child.visible = false
 
 	hide_game_over_screen()
-	#continue_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
-	#continue_button.pressed.connect( load_game )
-	#title_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
-	#title_button.pressed.connect( title_screen )
+	continue_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
+	continue_button.pressed.connect( load_game )
+	title_button.focus_entered.connect( play_audio.bind( button_focus_audio ) )
+	title_button.pressed.connect( title_screen )
 	LevelManager.level_load_started.connect( hide_game_over_screen )
 
 
@@ -33,10 +33,10 @@ func update_hp( _hp: int, _max_hp: int ) -> void:
 		update_heart( i, _hp )
 	
 func update_heart(_index: int, _hp: int) -> void:
-	if _index < hearts.size():  # Tarkista, ettei ylitetä listan rajoja
+	if _index < hearts.size(): 
 		var _value: int = clamp(_hp - _index * 2, 0, 2)
 		hearts[_index].value = _value
-		print("Updating heart index:", _index, "to value:", _value) # Päivittää automaattisesti visuaalisen tilan
+		print("Updating heart index:", _index, "to value:", _value) 
 	
 	
 func update_max_hp( _max_hp : int ) -> void:
@@ -49,25 +49,25 @@ func show_game_over_screen() -> void:
 	game_over.mouse_filter = Control.MOUSE_FILTER_STOP
 	
 	var can_continue : bool = SaveManager.get_save_file() != null
-	#continue_button.visible = can_continue
+	continue_button.visible = can_continue
 	
 	animation_player.play("show_game_over")
 	await animation_player.animation_finished
 	
-	#if can_continue == true:
-		#continue_button.grab_focus()
-	#else:
-	#	title_button.grab_focus()		
+	if can_continue == true:
+		continue_button.grab_focus()
+	else:
+		title_button.grab_focus()		
 		
-#func load_game() -> void:
-	#play_audio( button_select_audio )
-	#await fade_to_black()
-	#SaveManager.load_game()
+func load_game() -> void:
+	play_audio( button_select_audio )
+	await fade_to_black()
+	SaveManager.load_game()
 	
-#func title_screen() -> void:
-	#play_audio( button_select_audio )
-	#await fade_to_black()
-	#LevelManager.load_new_level( "res://title_scene/title_scene.tscn", "", Vector2.ZERO )
+func title_screen() -> void:
+	play_audio( button_select_audio )
+	await fade_to_black()
+	LevelManager.load_new_level( "res://title_scene/title_scene.tscn", "", Vector2.ZERO )
 		
 func hide_game_over_screen() -> void:
 	game_over.visible = false

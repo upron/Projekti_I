@@ -96,5 +96,5 @@ func make_invulnerable ( _duration : float = 1.0  ) -> void:
 	pass
 	
 func revive_player() -> void:
-	update_hp( 20 )
+	update_hp( 20)
 	state_machine.change_state( $StateMachine/Idle )

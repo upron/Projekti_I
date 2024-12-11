@@ -14,7 +14,8 @@ func play_animation(anim_name):
 	await animation_player.animation_finished
  
 func set_target():
-	pivot.rotation = (owner.direction - pivot.position).angle()
+	var target_angle = (owner.direction - pivot.position).angle()
+	pivot.rotation = lerp_angle(pivot.rotation, target_angle, 0.8)  # 0.1 määrittää nopeuden
 	
 func transition():
 	if can_transition:

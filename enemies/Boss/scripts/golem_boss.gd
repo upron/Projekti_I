@@ -9,7 +9,7 @@ signal  enemy_destroyed( hurt_box : HurtBox )
 
 var player : Player 
 var direction : Vector2
-
+var hurtbox : HurtBox 
 
 var hp = 35:
 	set(value):
@@ -30,8 +30,10 @@ func _process(_delta):
  
 	if direction.x < 0:
 		sprite.flip_h = true
+		$Sprite2D/HurtBox.position.x = -abs($Sprite2D/HurtBox.position.x) # Tee X-arvosta negatiivinen
 	else:
 		sprite.flip_h = false
+		$Sprite2D/HurtBox.position.x = abs($Sprite2D/HurtBox.position.x) # Tee X-arvosta positiivinen
  
 func _physics_process(delta):
 	velocity = direction.normalized() * 40

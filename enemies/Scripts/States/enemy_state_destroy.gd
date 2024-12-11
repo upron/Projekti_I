@@ -13,8 +13,6 @@ const PICKUP = preload("res://Items/Item_pickup/item_pickup.tscn")
 var _damage_position : Vector2
 var _direction : Vector2
 
-signal enemy_died  
-
 ## What happens when we initialize this state?
 func init() -> void:
 	enemy.enemy_destroyed.connect(_on_enemy_destroyed)
