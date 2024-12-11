@@ -87,3 +87,21 @@ motion_mode = 1
 [node name="Skeleton9" parent="." instance=ExtResource("5_kinv2")]
 position = Vector2(1097, 367)
 motion_mode = 1
+
+[node name="Skeleton10" parent="." instance=ExtResource("5_kinv2")]
+position = Vector2(493, 483)
+
+[node name="Skeleton11" parent="." instance=ExtResource("5_kinv2")]
+position = Vector2(467, 614)
+
+[node name="Skeleton12" parent="." instance=ExtResource("5_kinv2")]
+position = Vector2(394, 145)
+
+[node name="EliteSkeleton6" parent="." instance=ExtResource("8_c70ku")]
+position = Vector2(191, 57)
+
+[node name="EliteSkeleton7" parent="." instance=ExtResource("8_c70ku")]
+position = Vector2(349, 58)
+
+[node name="EliteSkeleton8" parent="." instance=ExtResource("8_c70ku")]
+position = Vector2(970, 131)
